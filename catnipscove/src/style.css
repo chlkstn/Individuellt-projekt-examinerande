@@ -1,0 +1,64 @@
+:root {
+  --background-color: rgba(160, 184, 163, 1);
+  --main-color: rgba(227, 236, 220, 1);
+  --button-color: rgba(206, 196, 225, 1);
+  --font-color: rgb(19, 19, 19);
+  --header-color: rgb(230, 230, 230);
+  --card-color: rgba(177, 201, 179, 1);
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+header {
+  display: flex;
+  align-self: center;
+  gap: 1rem;
+
+  nav {
+    display: flex;
+    gap: 4rem;
+    align-items: baseline;
+  }
+
+  a {
+    color: var(--header-color);
+    font-weight: 600;
+  }
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  min-width: 80vw;
+  height: 600px;
+
+  background-color: var(--main-color);
+  align-self: center;
+}
+
+.card {
+  background-color: var(--card-color);
+  width: 100px;
+  padding: 8px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.details {
+  figure {
+    width: 40vw;
+  }
+
+  width: 70vw;
+  height: 400px;
+}

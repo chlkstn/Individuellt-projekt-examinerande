@@ -5,15 +5,17 @@ import * as ReactDOM from "react-dom/client";
 
 import Root from "./routes/Root.tsx";
 import Error from "./routes/Error.tsx";
-import { Info } from "./routes/Info.tsx";
+import Info from "./routes/Info.tsx";
 import { Home } from "./routes/Home.tsx";
-import { Gallery } from "./routes/Gallery.tsx";
+import Gallery from "./routes/Gallery.tsx";
 import { Add } from "./routes/Add.tsx";
 import { Login } from "./routes/Login.tsx";
 import { Manage } from "./routes/Manage.tsx";
+import Details from "./components/Details.tsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./style.css";
+import "./reset.css";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "gallery",
         element: <Gallery />,
+      },
+      {
+        path: "gallery/:catId",
+        element: <Details />,
       },
       {
         path: "login",

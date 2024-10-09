@@ -3,11 +3,13 @@ import { Outlet } from "react-router-dom";
 export default function Root() {
   return (
     <>
+    
+    <section id="wrapper">
       <header>
         <figure> Logo</figure>
         <h1> The catnips Cove </h1>
         <nav>
-          <a href={`/home`}>Home</a>
+          <a href={`/home`}>-Home-</a>
           <a href={`/gallery`}>Our Cats</a>
           <a href={`/login`}>Staff Login</a>
           <a href={`/add`}>Add new Cat</a>
@@ -15,13 +17,15 @@ export default function Root() {
         </nav>
       </header>
 
-      <div id="detail">
+      <section id="content">
         <Outlet />
-      </div>
+      </section>
 
       <footer>
         <p> Footer</p>
       </footer>
+      </section>
+      
     </>
   );
 }

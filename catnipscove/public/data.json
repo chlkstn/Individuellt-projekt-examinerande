@@ -1,0 +1,105 @@
+{
+  "title": "Catnips Cove",
+
+  "cats": [
+    {
+      "id": 1,
+      "name": "Snowball",
+      "age": 9,
+      "race": "Perser",
+      "eyecolor": "blue",
+      "image": "https://raw.githubusercontent.com/chlkstn/images/refs/heads/main/cat1.webp",
+      "description": "Meet Snowball, a sweet 9-year-old Persian cat with a fluffy white coat as soft as a cloud! Snowball is calm and loves gentle pets and cozy naps. She’s looking for a forever home where she can be your quiet, cuddly companion. Though she’s a bit older, Snowball still has plenty of love to give and will warm your heart with her gentle purrs. Could Snowball be the perfect new friend for you?"
+    },
+    {
+      "id": 2,
+      "name": "Mittens",
+      "age": 3,
+      "race": "Tabby",
+      "eyecolor": "green",
+      "image": "https://raw.githubusercontent.com/chlkstn/images/refs/heads/main/cat2.webp",
+      "description": "Mittens is a playful 3-year-old tabby with striking green eyes. She loves chasing toys and exploring new places. Mittens is always up for adventure and enjoys attention from everyone she meets. If you're looking for an energetic and curious companion, Mittens is the one!"
+    },
+    {
+      "id": 3,
+      "name": "Whiskers",
+      "age": 7,
+      "race": "Siamese",
+      "eyecolor": "blue",
+      "image": "https://raw.githubusercontent.com/chlkstn/images/refs/heads/main/cat3.webp",
+      "description": "Whiskers is a 7-year-old Siamese cat with beautiful blue eyes. He is known for being very talkative and will always greet you with a soft meow. Whiskers loves sitting on laps and getting plenty of attention. He's looking for a loving home where he can be your loyal friend."
+    },
+    {
+      "id": 4,
+      "name": "Pumpkin",
+      "age": 5,
+      "race": "Calico",
+      "eyecolor": "amber",
+      "image": "https://raw.githubusercontent.com/chlkstn/images/refs/heads/main/cat4.webp",
+      "description": "Pumpkin is a friendly 5-year-old Calico cat with a warm and inviting personality. She has a beautiful mix of orange, black, and white fur. Pumpkin enjoys lounging in the sun and would love a cozy spot by the window in her new home."
+    },
+    {
+      "id": 5,
+      "name": "Luna",
+      "age": 2,
+      "race": "British Shorthair",
+      "eyecolor": "gold",
+      "image": "https://raw.githubusercontent.com/chlkstn/images/refs/heads/main/cat5.webp",
+      "description": "Luna is a 2-year-old British Shorthair with striking gold eyes and a soft, plush coat. She is quiet and independent but loves to be near her humans. Luna is perfect for a calm home where she can relax and show off her graceful personality."
+    },
+    {
+      "id": 6,
+      "name": "Shadow",
+      "age": 8,
+      "race": "Bombay",
+      "eyecolor": "yellow",
+      "image": "https://raw.githubusercontent.com/chlkstn/images/refs/heads/main/cat6.webp",
+      "description": "Shadow is an 8-year-old sleek black Bombay cat with glowing yellow eyes. He is a bit shy at first, but once he warms up, he's incredibly affectionate and loyal. Shadow loves quiet environments and would thrive in a peaceful, loving home."
+    },
+    {
+      "id": 7,
+      "name": "Oliver",
+      "age": 6,
+      "race": "Maine Coon",
+      "eyecolor": "green",
+      "image": "https://raw.githubusercontent.com/chlkstn/images/refs/heads/main/cat7.webp",
+      "description": "Oliver is a majestic 6-year-old Maine Coon with a thick, fluffy coat and big green eyes. He is gentle, loves being groomed, and enjoys lying by your side. Oliver would be the perfect fit for a family who enjoys a big, friendly cat who loves to snuggle."
+    },
+    {
+      "id": 8,
+      "name": "Bella",
+      "age": 4,
+      "race": "Ragdoll",
+      "eyecolor": "blue",
+      "image": "https://raw.githubusercontent.com/chlkstn/images/refs/heads/main/cat8.webp",
+      "description": "Bella is a 4-year-old Ragdoll with bright blue eyes and a soft, silky coat. She’s calm, loves being held, and will happily sit in your lap for hours. Bella is looking for a home where she can get all the attention and cuddles she deserves."
+    },
+    {
+      "id": 9,
+      "name": "Charlie",
+      "age": 3,
+      "race": "Russian Blue",
+      "eyecolor": "green",
+      "image": "https://raw.githubusercontent.com/chlkstn/images/refs/heads/main/cat9.webp",
+      "description": "Charlie is a 3-year-old Russian Blue with stunning green eyes and a short, plush coat. He is playful but also enjoys quiet moments. Charlie is a great mix of energetic and laid-back, making him a versatile companion for any home."
+    },
+    {
+      "id": 10,
+      "name": "Smokey",
+      "age": 10,
+      "race": "Domestic Shorthair",
+      "eyecolor": "yellow",
+      "image": "https://raw.githubusercontent.com/chlkstn/images/refs/heads/main/cat9.webp",
+      "description": "Smokey is a 10-year-old Domestic Shorthair with a soft gray coat and gentle yellow eyes. Though he's a bit older, Smokey is full of love and enjoys lounging by your side. He's looking for a quiet, loving home where he can spend his golden years in comfort."
+    },
+    {
+      "id": 11,
+      "name": "Ginger",
+      "age": 5,
+      "race": "Abyssinian",
+      "eyecolor": "amber",
+      "image": "https://raw.githubusercontent.com/chlkstn/images/refs/heads/main/cat1.webp",
+      "description": "Ginger is a 5-year-old Abyssinian with a sleek, golden-red coat and amber eyes. She’s full of energy, always curious, and loves playing with toys. Ginger would be perfect for someone who enjoys an active, playful cat who keeps life exciting."
+    }
+  ]
+}
