@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Cat, CatCardProps } from "../Interface";
+import { Cat, CatCardProps,CatContextType } from "../Interface";
 
 const Card: React.FC<CatCardProps> = ({ cat }) => {
   return (
@@ -13,3 +13,4 @@ const Card: React.FC<CatCardProps> = ({ cat }) => {
 };
 
 export default Card;
+ 

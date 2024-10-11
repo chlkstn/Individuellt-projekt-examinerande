@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Card from "../components/Card";
+import { useCats } from "../CatContext";
+import { Cat } from "../Interface";
 
 //placeholder for new ID
 
@@ -13,7 +15,31 @@ function Form() {
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
 
-  let [newcats, setNewcats] = useState([]);
+  const { addCat } = useCats(); // Get addCat function from context
+
+  const handleSubmit = () => {
+    // Create a new Cat object
+    const newCat: Cat = {
+      id: nextId++, // Increment the ID
+      name: name,
+      age: age,
+      race: race,
+      eyecolor: eyecolor,
+      image: image,
+      description: description,
+    };
+
+    // Call addCat to add the new cat to the context state
+    addCat(newCat);
+
+    // Optionally, reset the form after submission
+    setName("");
+    setAge(0);
+    setRace("");
+    setEyecolor("");
+    setImage("");
+    setDescription("");
+  };
 
   return (
     <>
@@ -25,7 +51,6 @@ function Form() {
 
       <form>
         <label>
-          {" "}
           Input name
           <input
             type="text"
@@ -34,7 +59,6 @@ function Form() {
           />
         </label>
         <label>
-          {" "}
           Input Age
           <input
             type="number"
@@ -43,7 +67,6 @@ function Form() {
           />
         </label>
         <label>
-          {" "}
           Input race
           <input
             type="text"
@@ -52,7 +75,6 @@ function Form() {
           />
         </label>
         <label>
-          {" "}
           Input eyecolor
           <input
             type="text"
@@ -62,7 +84,6 @@ function Form() {
         </label>
 
         <label>
-          {" "}
           Input image
           <input
             type="text"
@@ -71,7 +92,6 @@ function Form() {
           />
         </label>
         <label>
-          {" "}
           Input desc
           <textarea
             value={description}
@@ -80,28 +100,9 @@ function Form() {
         </label>
       </form>
 
-      <button
-        onClick={() => {
-          setNewcats([
-            ...newcats,
-            { id: nextId++, name: name, age: age, race: race },
-          ]);
-        }}
-      >
-        Add
-      </button>
+      <button onClick={handleSubmit}>Add</button>
 
       <p> result</p>
-
-      <ul>
-        {newcats.map((newcat) => (
-          <li key={newcats.id}>
-            {newcat.name}
-            {newcat.age}
-            {newcat.race}
-          </li>
-        ))}
-      </ul>
     </>
   );
 }

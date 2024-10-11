@@ -1,25 +1,23 @@
+import React from "react";
+import { useCats } from "../CatContext"; // Use the context hook
 import Card from "../components/Card";
-import React, { useEffect, useState } from "react";
-import { CatnipsCove, Cat } from "../Interface";
 
 const Gallery: React.FC = () => {
-  const [data, setData] = useState<CatnipsCove | null>(null); // Set the state type
+  const { cats, loading, error } = useCats(); // Get cats, loading, and error from context
 
-  useEffect(() => {
-    fetch("/data.json")
-      .then((response) => response.json())
-      .then((data: CatnipsCove) => setData(data)) // Cast the fetched data as CatnipsCove
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
-
-  if (!data) {
+  if (loading) {
     return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
   }
 
   return (
     <section className="gallery">
-      {data.cats.map((cat) => (
+      {cats.map((cat) => (
         <Card key={cat.id} cat={cat} />
+        
       ))}
     </section>
   );
