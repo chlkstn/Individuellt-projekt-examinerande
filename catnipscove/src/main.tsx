@@ -15,9 +15,11 @@ import { Login } from "./routes/Login.tsx";
 import Manage from "./routes/Manage.tsx";
 import Details from "./components/Details.tsx";
 
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./style.css";
 import "./reset.css";
+import EditForm from "./components/EditForm.tsx";
 
 const router = createBrowserRouter([
   {
@@ -32,13 +34,13 @@ const router = createBrowserRouter([
       {
         path: "gallery",
         element: (
-          <CatProvider>
+          
             <Gallery />
-          </CatProvider>
+          
         ),
       },
       {
-        path: "gallery/:catId",
+        path: "gallery",
         element: <Details />,
       },
       {
@@ -57,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "manage",
         element: <Manage />,
+      },
+      {
+        path: "manage/edit/:id",
+        element: <EditForm />,
       },
     ],
   },

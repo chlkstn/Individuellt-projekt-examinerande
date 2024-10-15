@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Card from "../components/Card";
+
 import { useCats } from "../CatContext";
 import { Cat } from "../Interface";
 
@@ -7,7 +7,7 @@ import { Cat } from "../Interface";
 
 let nextId = 0;
 
-function Form() {
+function AddForm() {
   const [name, setName] = useState("");
   const [age, setAge] = useState<number>(0);
   const [race, setRace] = useState("");
@@ -28,6 +28,8 @@ function Form() {
       image: image,
       description: description,
     };
+
+    console.log("Adding new cat: ", newCat);
 
     // Call addCat to add the new cat to the context state
     addCat(newCat);
@@ -107,4 +109,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default AddForm;

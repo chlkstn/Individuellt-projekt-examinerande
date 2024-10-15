@@ -68,8 +68,29 @@ export const CatProvider: React.FC<{ children: ReactNode }> = ({
     localStorage.setItem("cats", JSON.stringify(updatedCats)); // Persist to local storage if needed
   };
 
+  // function to edit the information on a cat and save to local storage
+  const editCat = (updatedCat: Cat) => {
+    const updatedCats = cats.map((cat) =>
+      cat.id === updatedCat.id ? updatedCat : cat
+    );
+    setCats(updatedCats);
+    localStorage.setItem("cats", JSON.stringify(updatedCats)); // Persist to local storage
+  };
+
+  // Function to remove the cat from the array and save to local storage
+
+  const removeCat = (id: number) => {
+    const updatedCats = cats.filter((cat) => cat.id !== id);
+    setCats(updatedCats);
+    localStorage.setItem("cats", JSON.stringify(updatedCats)); // Persist to local storage
+  };
+
+
+
+  // Saving da information in the context provider
+
   return (
-    <CatContext.Provider value={{ cats, addCat, loading, error }}>
+    <CatContext.Provider value={{ cats, addCat, loading, error, removeCat, editCat }}>
       {children}
     </CatContext.Provider>
   );
