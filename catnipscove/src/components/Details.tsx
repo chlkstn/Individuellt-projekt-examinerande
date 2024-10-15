@@ -5,10 +5,8 @@ import { Cat } from "../Interface";
 
 const Details: React.FC = () => {
   const { catId } = useParams<{ catId: string }>(); // Get the catId from the route params
-  const { cats } = useCats(); // Access cats from the context
+  const { cats, loading, error } = useCats(); // Access cats, loading, and error from the context
   const [cat, setCat] = useState<Cat | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // Find the selected cat from the context
@@ -16,10 +14,7 @@ const Details: React.FC = () => {
 
     if (foundCat) {
       setCat(foundCat);
-    } else {
-      setError("Cat not found");
     }
-    setLoading(false);
   }, [catId, cats]); // Dependency on catId and cats
 
   if (loading) {
@@ -27,7 +22,7 @@ const Details: React.FC = () => {
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div>Error: {error}</div>;
   }
 
   if (!cat) {

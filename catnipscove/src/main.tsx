@@ -15,7 +15,6 @@ import { Login } from "./routes/Login.tsx";
 import Manage from "./routes/Manage.tsx";
 import Details from "./components/Details.tsx";
 
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./style.css";
 import "./reset.css";
@@ -33,14 +32,10 @@ const router = createBrowserRouter([
       },
       {
         path: "gallery",
-        element: (
-          
-            <Gallery />
-          
-        ),
+        element: <Gallery />,
       },
       {
-        path: "gallery",
+        path: "gallery/:catId",
         element: <Details />,
       },
       {
@@ -71,7 +66,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <CatProvider>
-      
       {/* Wrap the entire router in CatProvider */}
       <RouterProvider router={router} />
     </CatProvider>
