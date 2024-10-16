@@ -40,6 +40,10 @@ const Details: React.FC = () => {
       <p>Race: {cat.race}</p>
       <p>Eye Color: {cat.eyecolor}</p>
       <p>{cat.description}</p>
+
+      <button> Next</button>
+      <button> Prev</button>
+      <button> Back</button>
     </section>
   );
 };

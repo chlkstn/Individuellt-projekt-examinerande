@@ -29,3 +29,11 @@ export interface CatContextType {
   loading: boolean;  // Loading state
   error: string | null;  // Error state
 }
+
+
+// Interface for UseLogin
+export interface AuthContextType {
+  isAuthenticated: boolean;
+  login: () => void;
+  logout: () => void;
+}
