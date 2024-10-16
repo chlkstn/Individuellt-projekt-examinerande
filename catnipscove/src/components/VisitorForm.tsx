@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { useCats } from "../CatContext";
-import { Cat } from "../Interface";
+import { Visitor } from "../Interface";
 
 //placeholder for new ID
 
@@ -19,85 +19,57 @@ function VisitorForm() {
 
   const handleSubmit = () => {
     // Create a new Visitor Object
-    const newVisitor: Cat = {
+    const newVisitor: Visitor = {
       id: nextId++, // Increment the ID
-      name: name,
-      age: age,
-      race: race,
-      eyecolor: eyecolor,
-      image: image,
-      description: description,
+      firstname: firstname,
+      lastname: lastname,
+      phone: phone,
+      email: email,
+      message: message,
     };
-
-    console.log("Adding new cat: ", newCat);
-
-    // Call addCat to add the new cat to the context state
-    addCat(newCat);
-
-    // Optionally, reset the form after submission
-    setName("");
-    setAge(0);
-    setRace("");
-    setEyecolor("");
-    setImage("");
-    setDescription("");
   };
 
   return (
     <>
-      <p>Name = {name}</p>
-      <p>Age = {age}</p>
-      <p>Race = {race}</p>
-      <p>eyecolor = {eyecolor}</p>
-      <p>Desc = {description}</p>
-
       <form>
         <label>
-          Input name
+          Input Firstname
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={firstname}
+            onChange={(e) => setFirstname(e.target.value)}
           />
         </label>
         <label>
-          Input Age
+          Input Lastname
+          <input
+            type="text"
+            value={lastname}
+            onChange={(e) => setLastname(e.target.value)}
+          />
+        </label>
+        <label>
+          Input Phonenumber
           <input
             type="number"
-            value={age}
-            onChange={(e) => setAge(Number(e.target.value))}
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
           />
         </label>
         <label>
-          Input race
+          Input email
           <input
             type="text"
-            value={race}
-            onChange={(e) => setRace(e.target.value)}
-          />
-        </label>
-        <label>
-          Input eyecolor
-          <input
-            type="text"
-            value={eyecolor}
-            onChange={(e) => setEyecolor(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
 
         <label>
-          Input image
-          <input
-            type="text"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-          />
-        </label>
-        <label>
-          Input desc
+          Write us a message
           <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           />
         </label>
       </form>
