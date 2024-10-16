@@ -7,6 +7,7 @@ const Details: React.FC = () => {
   const { catId } = useParams<{ catId: string }>(); // Get the catId from the route params
   const { cats, loading, error } = useCats(); // Access cats, loading, and error from the context
   const [cat, setCat] = useState<Cat | null>(null);
+  const { bookCat } = useCats();
 
   useEffect(() => {
     // Find the selected cat from the context
@@ -29,6 +30,11 @@ const Details: React.FC = () => {
     return <div>Cat not found</div>;
   }
 
+
+  const handleBookCat = (catId: number) => {
+    bookCat(catId);
+  };
+
   return (
     <section className="details">
       <h1>{cat.name}</h1>
@@ -41,9 +47,8 @@ const Details: React.FC = () => {
       <p>Eye Color: {cat.eyecolor}</p>
       <p>{cat.description}</p>
 
-      <button> Next</button>
-      <button> Prev</button>
-      <button> Back</button>
+      <button onClick={() => handleBookCat(cat.id)}>Book cat</button>
+      
     </section>
   );
 };

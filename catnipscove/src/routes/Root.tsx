@@ -3,6 +3,7 @@ import { useAuth } from "../AuthContext";
 
 export default function Root() {
   const { isAuthenticated } = useAuth();
+  const { logout } = useAuth();
 
   // render "add and manage" if the user is logged in
 
@@ -18,6 +19,7 @@ export default function Root() {
             <a href={`/login`}>Staff Login</a>
             {isAuthenticated && <a href="/add">Add new Cat</a>}
             {isAuthenticated && <a href="/manage">Manage cats</a>}
+            {isAuthenticated && <button onClick={logout}>Logout</button>}
           </nav>
         </header>
 

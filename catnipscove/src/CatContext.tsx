@@ -87,10 +87,21 @@ export const CatProvider: React.FC<{ children: ReactNode }> = ({
 
 
 
+  // function to set the cat as booked
+  const bookCat = (id: number) => {
+    const updatedCats = cats.map((cat) =>
+      cat.id === id ? { ...cat, booked: true } : cat
+    );
+    setCats(updatedCats);
+    localStorage.setItem("cats", JSON.stringify(updatedCats)); // Persist to local storage
+  };
+
+
+
   // Saving da information in the context provider
 
   return (
-    <CatContext.Provider value={{ cats, addCat, loading, error, removeCat, editCat }}>
+    <CatContext.Provider value={{ cats, addCat, loading, error, removeCat, editCat,bookCat }}>
       {children}
     </CatContext.Provider>
   );

@@ -9,6 +9,7 @@ export interface Cat {
   eyecolor: string;
   image: string;
   description: string;
+  booked: boolean;
 }
 
 // Interface representing the entire data structure
@@ -26,14 +27,24 @@ export interface CatCardProps {
 export interface CatContextType {
   cats: Cat[];
   addCat: (newCat: Cat) => void;
-  loading: boolean;  // Loading state
-  error: string | null;  // Error state
+  loading: boolean; // Loading state
+  error: string | null; // Error state
 }
-
 
 // Interface for UseLogin
 export interface AuthContextType {
   isAuthenticated: boolean;
   login: () => void;
   logout: () => void;
+}
+
+// Interface for Visitors
+
+export interface Visitor {
+  id: number;
+  firstname: string;
+  lastname: string;
+  phone: number;
+  email: string;
+  message: string;
 }

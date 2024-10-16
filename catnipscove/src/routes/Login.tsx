@@ -26,6 +26,7 @@ const Login: React.FC = () => {
       <section>
         <h2>Login</h2>
         <p> Please Login </p>
+        <p> u = anton pass = aaaa</p>
         <form onSubmit={handleLoginSubmit}>
           <input
             type="text"

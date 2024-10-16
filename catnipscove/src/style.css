@@ -53,6 +53,28 @@ form {
   width: 100px;
   padding: 8px;
 }
+.card-booked {
+  background-color: var(--button-color);
+  width: 100px;
+  padding: 8px;
+}
+
+.textunbooked{
+
+  display: none;
+  color: aquamarine;
+
+
+
+}
+
+.textbooked{
+
+  display: block;
+
+
+
+}
 
 .gallery {
   display: flex;
