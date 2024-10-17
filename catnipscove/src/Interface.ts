@@ -1,5 +1,3 @@
-// interfaces.ts
-
 // Interface representing an individual cat
 export interface Cat {
   id: number;
@@ -22,8 +20,7 @@ export interface CatCardProps {
   cat: Cat;
 }
 
-//Interface for my context where I want to put my array of cats
-
+// Interface for my context where I want to put my array of cats
 export interface CatContextType {
   cats: Cat[];
   addCat: (newCat: Cat) => void;
@@ -39,7 +36,6 @@ export interface AuthContextType {
 }
 
 // Interface for Visitors
-
 export interface Visitor {
   id: number;
   firstname: string;
@@ -47,4 +43,14 @@ export interface Visitor {
   phone: number;
   email: string;
   message: string;
+}
+
+export interface VisitorContextType {
+  visitors: Visitor[];
+  addVisitor: (visitor: Visitor) => void;
+}
+
+export interface VisitorAction {
+  type: "ADD_VISITOR";
+  payload: Visitor;
 }

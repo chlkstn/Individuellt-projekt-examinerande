@@ -1,21 +1,27 @@
-import { useState } from "react";
-
+import { useState,useEffect } from "react";
+import { useVisitors } from "../VisitorContext";
 import { useCats } from "../CatContext";
+import { Cat } from "../Interface";
+import { useParams,useNavigate } from "react-router-dom";
+
 import { Visitor } from "../Interface";
 
 //placeholder for new ID
 
 let nextId = 0;
 
-function VisitorForm() {
+function VisitorForm({ catId }: { catId: number }) {
+  
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
 
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
-  const { addVisitor } = useCats(); // Get addCat function from context
+  const { addVisitor } = useVisitors();
+  const { bookCat } = useCats();
+  const navigate = useNavigate();
+  
 
   const handleSubmit = () => {
     // Create a new Visitor Object
@@ -27,6 +33,9 @@ function VisitorForm() {
       email: email,
       message: message,
     };
+    addVisitor(newVisitor); // Add the visitor to the context
+    bookCat(catId); // Book the cat using the visitor's ID
+    navigate("/gallery");
   };
 
   return (
@@ -74,7 +83,7 @@ function VisitorForm() {
         </label>
       </form>
 
-      <button onClick={handleSubmit}>Add</button>
+      <button onClick={handleSubmit}>Submit</button>
 
       <p> result</p>
     </>

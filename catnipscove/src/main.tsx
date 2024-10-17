@@ -3,11 +3,17 @@ import { createRoot } from "react-dom/client";
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 
+// Importing context 
+
 import { CatProvider } from "./CatContext.tsx";
+import { VisitorProvider } from "./VisitorContext.tsx";
+import { useAuth, AuthProvider } from "./AuthContext";
+
+// importing the routes
 
 import Root from "./routes/Root.tsx";
 import Error from "./routes/Error.tsx";
-import Info from "./routes/Info.tsx";
+
 import { Home } from "./routes/Home.tsx";
 import Gallery from "./routes/Gallery.tsx";
 import Add from "./routes/Add.tsx";
@@ -15,7 +21,7 @@ import  Login  from "./routes/Login.tsx";
 import Manage from "./routes/Manage.tsx";
 import Details from "./components/Details.tsx";
 
-import { useAuth, AuthProvider } from "./AuthContext";
+
 
 import {
   createBrowserRouter,
@@ -53,10 +59,7 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login />,
       },
-      {
-        path: "info",
-        element: <Info />,
-      },
+    
       {
         path: "add",
 
@@ -82,8 +85,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <CatProvider>
       <AuthProvider>
-        {/* Wrap the entire router in CatProvider */}
+        <VisitorProvider>
+        
         <RouterProvider router={router} />
+        </VisitorProvider>
       </AuthProvider>
     </CatProvider>
   </React.StrictMode>
