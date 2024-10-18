@@ -27,4 +27,9 @@
     border-collapse: collapse;
     border-spacing: 0;
   }
+
+
+  ul {
+    list-style: none;
+   }
   

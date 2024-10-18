@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap");
+
 :root {
   --background-color: rgba(160, 184, 163, 1);
   --main-color: rgba(227, 236, 220, 1);
@@ -7,26 +11,95 @@
   --card-color: rgba(177, 201, 179, 1);
 }
 
+h1 {
+  font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+p {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 5px 12px 5px 7px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("Images/Paw.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 body {
   background-color: var(--background-color);
 }
 
-header {
-  display: flex;
-  align-self: center;
-  gap: 1rem;
+/* Menu*/
 
-  nav {
-    display: flex;
-    gap: 4rem;
-    align-items: baseline;
-  }
 
-  a {
-    color: var(--header-color);
-    font-weight: 600;
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 20px;
 }
+
+
+
+/* Menu*/
 
 form {
   display: flex;
@@ -57,23 +130,6 @@ form {
   background-color: var(--button-color);
   width: 100px;
   padding: 8px;
-}
-
-.textunbooked{
-
-  display: none;
-  color: aquamarine;
-
-
-
-}
-
-.textbooked{
-
-  display: block;
-
-
-
 }
 
 .gallery {

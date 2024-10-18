@@ -53,7 +53,9 @@ const Details: React.FC = () => {
           <p>Eye Color: {cat.eyecolor}</p>
           <p>{cat.description}</p>
 
-          <button onClick={() => handleBookCat(cat.id)}>Book cat</button>
+          {!cat.booked && ( // Only show the button if the cat is not booked
+            <button onClick={() => handleBookCat(cat.id)}>Book cat</button>
+          )}
         </>
       )}
     </section>

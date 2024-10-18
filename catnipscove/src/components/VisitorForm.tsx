@@ -10,6 +10,8 @@ import { Visitor } from "../Interface";
 
 let nextId = 0;
 
+// based on the cats id we create a new visitor for this specific cat
+
 function VisitorForm({ catId }: { catId: number }) {
   
   const [firstname, setFirstname] = useState("");
@@ -32,6 +34,8 @@ function VisitorForm({ catId }: { catId: number }) {
       phone: phone,
       email: email,
       message: message,
+      // This should link the visitor the the specific cat
+      catId: catId, 
     };
     addVisitor(newVisitor); // Add the visitor to the context
     bookCat(catId); // Book the cat using the visitor's ID

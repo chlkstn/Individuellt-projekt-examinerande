@@ -11,12 +11,16 @@ export default function Root() {
     <>
       <section id="wrapper">
         <header>
-          <figure> Logo</figure>
-          <h1> The catnips Cove </h1>
+          <figure>
+            {" "}
+            <img src="src\Images\Logo.svg" alt="Catnips Logo" />
+          </figure>
+
           <nav>
             <a href={`/home`}>-Home-</a>
             <a href={`/gallery`}>Our Cats</a>
             <a href={`/login`}>Staff Login</a>
+
             {isAuthenticated && <a href="/add">Add new Cat</a>}
             {isAuthenticated && <a href="/manage">Manage cats</a>}
             {isAuthenticated && <button onClick={logout}>Logout</button>}

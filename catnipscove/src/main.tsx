@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 
-// Importing context 
+// Importing context
 
 import { CatProvider } from "./CatContext.tsx";
 import { VisitorProvider } from "./VisitorContext.tsx";
@@ -17,11 +17,10 @@ import Error from "./routes/Error.tsx";
 import { Home } from "./routes/Home.tsx";
 import Gallery from "./routes/Gallery.tsx";
 import Add from "./routes/Add.tsx";
-import  Login  from "./routes/Login.tsx";
+import Login from "./routes/Login.tsx";
 import Manage from "./routes/Manage.tsx";
 import Details from "./components/Details.tsx";
-
-
+import VisitorDetails from "./components/VisitorDetails.tsx";
 
 import {
   createBrowserRouter,
@@ -30,6 +29,7 @@ import {
 } from "react-router-dom";
 import "./style.css";
 import "./reset.css";
+import "./navbar.css";
 import EditForm from "./components/EditForm.tsx";
 
 const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
@@ -59,12 +59,13 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login />,
       },
-    
+
       {
         path: "add",
 
         element: <Add />,
       },
+
       {
         path: "manage",
         element: (
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
         path: "manage/edit/:id",
         element: <EditForm />,
       },
+      {
+        path: "/manage/visitordetails/:catId",
+        element: <VisitorDetails />,
+      },
     ],
   },
 ]);
@@ -86,8 +91,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <CatProvider>
       <AuthProvider>
         <VisitorProvider>
-        
-        <RouterProvider router={router} />
+          <RouterProvider router={router} />
         </VisitorProvider>
       </AuthProvider>
     </CatProvider>

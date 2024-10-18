@@ -26,6 +26,7 @@ const VisitorProvider: React.FC = ({ children }) => {
     dispatch({ type: "ADD_VISITOR", payload: visitor });
   };
 
+  
   return (
     <VisitorContext.Provider value={{ visitors, addVisitor }}>
       {children}

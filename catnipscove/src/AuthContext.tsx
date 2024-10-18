@@ -1,14 +1,12 @@
 // AuthContext.tsx
-import React, { createContext, useContext, useState, useEffect } from 'react';
-
-
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };
@@ -16,14 +14,13 @@ export const useAuth = () => {
 export const AuthProvider: React.FC = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     // Retrieve login state from localStorage
-    return localStorage.getItem('isAuthenticated') === 'true';
+    return localStorage.getItem("isAuthenticated") === "true";
   });
-
 
   // Saving authenticated to Local storage
 
   useEffect(() => {
-    localStorage.setItem('isAuthenticated', isAuthenticated.toString());
+    localStorage.setItem("isAuthenticated", isAuthenticated.toString());
   }, [isAuthenticated]);
 
   const login = () => setIsAuthenticated(true);

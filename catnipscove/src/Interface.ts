@@ -43,6 +43,7 @@ export interface Visitor {
   phone: number;
   email: string;
   message: string;
+  catId: number; 
 }
 
 export interface VisitorContextType {
