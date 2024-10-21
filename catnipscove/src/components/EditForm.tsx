@@ -38,6 +38,7 @@ const EditForm: React.FC = () => {
 
   return (
     <>
+    <section className="wrapper-form">
       <form>
         <label>
           Name
@@ -90,6 +91,7 @@ const EditForm: React.FC = () => {
 
       <button onClick={handleSubmit}>Save Changes</button>
       <button onClick={handleCancel}>Cancel</button>
+      </section>
     </>
   );
 };

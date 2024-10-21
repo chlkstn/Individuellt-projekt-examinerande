@@ -21,6 +21,11 @@ h2 {
   font-weight: 400;
   font-size: 1rem;
 }
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
 
 p {
   font-family: "Merriweather", serif;
@@ -34,7 +39,7 @@ button {
   border: none;
   border-radius: 0.5rem;
   padding: 5px 12px 5px 7px;
-  position: relative;
+
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -54,96 +59,203 @@ body {
   background-color: var(--background-color);
 }
 
-/* Menu*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.menu-icon {
-  font-size: 30px;
-  cursor: pointer;
-  color: white;
-  position: absolute;
-  top: 10px;
-  right: 20px;
-}
-
-
-
-/* Menu*/
-
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 200px;
+
   gap: 1rem;
 }
 
 #wrapper {
   display: flex;
   flex-direction: column;
+
+  justify-self: center;
 }
 
 #content {
-  min-width: 80vw;
-  height: 600px;
+  min-width: 70vw;
+  max-width: 70vw;
+  min-height: 600px;
+  border-radius: 6px;
+  min-height: 80vh;
+  max-height: fit-content;
+  padding: 1rem;
 
   background-color: var(--main-color);
   align-self: center;
 }
 
+.wrapper-form {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+
+  form {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-self: center;
+  }
+
+  button {
+    align-self: center;
+  }
+}
+
 .card {
   background-color: var(--card-color);
-  width: 100px;
+  width: 140px;
   padding: 8px;
+  border-radius: 6px;
 }
 .card-booked {
   background-color: var(--button-color);
-  width: 100px;
+  width: 140px;
   padding: 8px;
+  border-radius: 6px;
 }
 
 .gallery {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4vw;
+  justify-content: center;
+  justify-self: center;
+  padding: 20px;
 }
 
 .details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem;
+
   figure {
-    width: 40vw;
+    width: 30vw;
   }
 
-  width: 70vw;
-  height: 400px;
+  justify-self: center;
+}
+
+.details-info {
+  p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+}
+
+#social-media {
+  display: flex;
+  gap: 10px;
+}
+
+#social-media figure img {
+  width: 30px;
+  height: auto;
+}
+
+.manage {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns for desktop view */
+  gap: 20px;
+  padding: 1rem;
+}
+
+
+.manage-item {
+
+padding: 0.2rem;
+border-radius: 8px;
+background-color: var(--card-color);
+
+text-align: center;
+}
+
+.manage-item button {
+  margin: 0.5rem;}
+
+.manage-item h2 {
+margin-bottom: 1rem;
+}
+
+
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  #content {
+    min-width: 90vw;
+    max-width: 80vw;
+    min-height: 600px;
+    border-radius: 6px;
+    max-height: fit-content;
+    padding: 1rem;
+  
+    background-color: var(--main-color);
+    align-self: center;
+  }
+
+
+
+
+
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 2rem;
+
+    figure {
+      width: 80vw;
+    }
+  }
+
+  .details-info {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      justify-self: center;
+    }
+
+    p {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      align-self: flex-end;
+    }
+
+
+
+  }
+
+  .manage {
+    grid-template-columns: 1fr; 
+  }
+}
+
+
+
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Mobile: 2 cards per row */
+  }
 }

@@ -13,7 +13,7 @@ const Login: React.FC = () => {
 
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (username == "anton" && password == "aaaa") {
+    if (username == "catnip" && password == "mjao") {
       login();
       navigate("/Manage");
     } else {
@@ -23,10 +23,12 @@ const Login: React.FC = () => {
 
   return (
     <>
-      <section>
-        <h2>Login</h2>
-        <p> Please Login </p>
-        <p> u = anton pass = aaaa</p>
+      <section className="wrapper-form">
+        <h1>Login</h1>
+        <br></br>
+        <p> Please Login to access the restricted area </p>
+        <br></br>
+        <p>( u = catnip , pass = mjao)</p>
         <form onSubmit={handleLoginSubmit}>
           <input
             type="text"

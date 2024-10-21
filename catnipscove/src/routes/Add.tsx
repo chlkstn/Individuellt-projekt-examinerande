@@ -29,7 +29,7 @@ function Add() {
       description: description,
     };
 
-    console.log('Adding new cat: ', newCat);
+    console.log("Adding new cat: ", newCat);
 
     // Call addCat to add the new cat to the context state
     addCat(newCat);
@@ -44,67 +44,65 @@ function Add() {
   };
 
   return (
+
+
     <>
-      <p>Name = {name}</p>
-      <p>Age = {age}</p>
-      <p>Race = {race}</p>
-      <p>eyecolor = {eyecolor}</p>
-      <p>Desc = {description}</p>
 
-      <form>
-        <label>
-          Input name
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-        <label>
-          Input Age
-          <input
-            type="number"
-            value={age}
-            onChange={(e) => setAge(Number(e.target.value))}
-          />
-        </label>
-        <label>
-          Input race
-          <input
-            type="text"
-            value={race}
-            onChange={(e) => setRace(e.target.value)}
-          />
-        </label>
-        <label>
-          Input eyecolor
-          <input
-            type="text"
-            value={eyecolor}
-            onChange={(e) => setEyecolor(e.target.value)}
-          />
-        </label>
+      <section className="wrapper-form">
+        <h1> Add a new cat</h1>
+        <form>
+          <label>
+            Cats name
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+          <label>
+            Cats Age
+            <input
+              type="number"
+              value={age}
+              onChange={(e) => setAge(Number(e.target.value))}
+            />
+          </label>
+          <label>
+            Cats race
+            <input
+              type="text"
+              value={race}
+              onChange={(e) => setRace(e.target.value)}
+            />
+          </label>
+          <label>
+            Cats eyecolor
+            <input
+              type="text"
+              value={eyecolor}
+              onChange={(e) => setEyecolor(e.target.value)}
+            />
+          </label>
 
-        <label>
-          Input image
-          <input
-            type="text"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-          />
-        </label>
-        <label>
-          Input desc
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </label>
-      </form>
+          <label>
+            Cats image
+            <input
+              type="text"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+            />
+          </label>
+          <label>
+            Description
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </label>
+        </form>
 
-      <button onClick={handleSubmit}>Add</button>
-
-      <p> result</p>
+        <button onClick={handleSubmit}>Add</button>
+      </section>
     </>
   );
 }

@@ -38,7 +38,7 @@ const Manage: React.FC = () => {
   return (
     <section className="manage">
       {cats.map((cat) => (
-        <div key={cat.id}>
+        <div className="manage-item" key={cat.id}>
           <h2>{cat.name}</h2>
 
           <button onClick={() => handleEdit(cat.id)}>Edit</button>

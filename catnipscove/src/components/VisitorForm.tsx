@@ -23,6 +23,9 @@ function VisitorForm({ catId }: { catId: number }) {
   const { addVisitor } = useVisitors();
   const { bookCat } = useCats();
   const navigate = useNavigate();
+  const handleCancel = () => {
+    navigate("/gallery"); // Navigate back to Gallery page if canceled
+  };
   
 
   const handleSubmit = () => {
@@ -44,9 +47,12 @@ function VisitorForm({ catId }: { catId: number }) {
 
   return (
     <>
+    <section className="wrapper-form">
+
+      <h3> Please fill in your contact details</h3>
       <form>
         <label>
-          Input Firstname
+          Firstname
           <input
             type="text"
             value={firstname}
@@ -54,7 +60,7 @@ function VisitorForm({ catId }: { catId: number }) {
           />
         </label>
         <label>
-          Input Lastname
+          Lastname
           <input
             type="text"
             value={lastname}
@@ -62,7 +68,7 @@ function VisitorForm({ catId }: { catId: number }) {
           />
         </label>
         <label>
-          Input Phonenumber
+          Phonenumber
           <input
             type="number"
             value={phone}
@@ -70,7 +76,7 @@ function VisitorForm({ catId }: { catId: number }) {
           />
         </label>
         <label>
-          Input email
+          Email
           <input
             type="text"
             value={email}
@@ -88,8 +94,10 @@ function VisitorForm({ catId }: { catId: number }) {
       </form>
 
       <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleCancel}>Cancel</button>
 
-      <p> result</p>
+      
+      </section>
     </>
   );
 }
