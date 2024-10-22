@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap");
+
+:root {
+  --background-color: rgba(160, 184, 163, 1);
+  --main-color: rgba(227, 236, 220, 1);
+  --button-color: rgba(206, 196, 225, 1);
+  --font-color: rgb(19, 19, 19);
+  --header-color: rgb(230, 230, 230);
+  --card-color: rgba(177, 201, 179, 1);
+}
+
+.main-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.welcome-content,
+.why-adopt-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.welcome img,
+.why-adopt img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .welcome-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .why-adopt-content {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .welcome img {
+    width: 100%;
+    border-radius: 12px;
+  }
+  .why-adopt img {
+    width: 50%;
+    max-height: 400px;
+  }
+
+  .why-adopt p {
+    align-self: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    p {
+      font-size: 14px;
+    }
+
+    h1{
+
+        margin-bottom: 2rem;
+        justify-self: center;
+
+
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    li {
+      font-size: large;
+    }
+  }
+
+  .help {
+    ul {
+    }
+  }
+}

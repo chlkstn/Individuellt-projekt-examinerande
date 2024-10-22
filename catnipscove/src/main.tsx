@@ -30,6 +30,7 @@ import {
 import "./style.css";
 import "./reset.css";
 import "./navbar.css";
+import "./home.css";
 import EditForm from "./components/EditForm.tsx";
 
 const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
@@ -63,7 +64,9 @@ const router = createBrowserRouter([
       {
         path: "add",
 
-        element: <Add />,
+        element:<ProtectedRoute>
+        <Add />
+      </ProtectedRoute>,
       },
 
       {

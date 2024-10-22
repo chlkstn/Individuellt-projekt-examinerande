@@ -36,13 +36,22 @@ p {
 button {
   font-family: "Poppins", sans-serif;
   background-color: var(--button-color);
-  border: none;
+  border: solid rgb(121, 119, 120) 1px;
   border-radius: 0.5rem;
   padding: 5px 12px 5px 7px;
 
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+
+button:hover {
+  background-color: rgb(216, 188, 248);
+}
+
+button:active {
+  transform: scale(0.98);
+  background-color: rgb(152, 136, 180);
 }
 
 button::before {
@@ -72,11 +81,13 @@ form {
   flex-direction: column;
 
   justify-self: center;
+  min-width: 60vw;
+  max-width: 60vw;
 }
 
 #content {
-  min-width: 70vw;
-  max-width: 70vw;
+  min-width: 60vw;
+
   min-height: 600px;
   border-radius: 6px;
   min-height: 80vh;
@@ -85,6 +96,7 @@ form {
 
   background-color: var(--main-color);
   align-self: center;
+  border: solid rgb(119, 133, 119) 1px;
 }
 
 .wrapper-form {
@@ -100,6 +112,7 @@ form {
 
   button {
     align-self: center;
+    margin-bottom: 1rem;
   }
 }
 
@@ -109,6 +122,11 @@ form {
   padding: 8px;
   border-radius: 6px;
 }
+
+.card:hover {
+  background-color: var(--background-color);
+}
+
 .card-booked {
   background-color: var(--button-color);
   width: 140px;
@@ -116,12 +134,17 @@ form {
   border-radius: 6px;
 }
 
+.card-booked:hover {
+  background-color: rgb(205, 180, 250);
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 4vw;
+  gap: 3vw;
   justify-content: center;
   justify-self: center;
+  align-self: center;
   padding: 20px;
 }
 
@@ -132,6 +155,7 @@ form {
 
   figure {
     width: 30vw;
+    margin-right: 1rem;
   }
 
   justify-self: center;
@@ -168,52 +192,65 @@ footer {
 
 .manage {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columns for desktop view */
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   padding: 1rem;
 }
 
-
 .manage-item {
+  padding: 0.2rem;
+  border-radius: 8px;
+  background-color: var(--card-color);
 
-padding: 0.2rem;
-border-radius: 8px;
-background-color: var(--card-color);
-
-text-align: center;
+  text-align: center;
 }
 
 .manage-item button {
-  margin: 0.5rem;}
-
-.manage-item h2 {
-margin-bottom: 1rem;
+  margin: 0.5rem;
 }
 
+.manage-item h2 {
+  margin-bottom: 1rem;
+}
 
-
-@media (max-width: 768px) {
+@media (max-width: 880px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  #wrapper {
+    display: flex;
+    flex-direction: column;
+
+    justify-self: center;
+    min-width: 90vw;
+    max-width: 60vw;
+  }
 
   #content {
     min-width: 90vw;
-    max-width: 80vw;
+    max-width: 90vw;
     min-height: 600px;
     border-radius: 6px;
     max-height: fit-content;
     padding: 1rem;
-  
+
     background-color: var(--main-color);
     align-self: center;
   }
 
-
-
-
-
+  .card {
+    background-color: var(--card-color);
+    width: 140px;
+    padding: 8px;
+    border-radius: 6px;
+  }
+  .card-booked {
+    background-color: var(--button-color);
+    width: 140px;
+    padding: 8px;
+    border-radius: 6px;
+  }
 
   .details {
     display: flex;
@@ -223,6 +260,7 @@ margin-bottom: 1rem;
 
     figure {
       width: 80vw;
+      margin: auto;
     }
   }
 
@@ -241,21 +279,32 @@ margin-bottom: 1rem;
     button {
       align-self: flex-end;
     }
-
-
-
   }
 
   .manage {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 }
 
-
-
-
 @media (max-width: 600px) {
   .gallery {
-    grid-template-columns: repeat(2, 1fr); /* Mobile: 2 cards per row */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For Large Screens*/
+
+@media (min-width: 1200px) {
+  .card {
+    background-color: var(--card-color);
+    width: 180px;
+    padding: 8px;
+    border-radius: 6px;
+  }
+  .card-booked {
+    background-color: var(--button-color);
+    width: 180px;
+    padding: 8px;
+    border-radius: 6px;
   }
 }

@@ -107,7 +107,7 @@ export const CatProvider: React.FC<{ children: ReactNode }> = ({
   );
 };
 
-// Custom hook to use the context
+// Error handling if the content is not wrapped in the catprovider
 export const useCats = () => {
   const context = useContext(CatContext);
   if (!context) {
