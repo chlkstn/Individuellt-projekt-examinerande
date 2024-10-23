@@ -45,6 +45,12 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
+        path: "/",
+        element: <Navigate to="/home" />,
+        index: true,
+      },
+
+      {
         path: "home",
         element: <Home />,
       },
@@ -64,9 +70,11 @@ const router = createBrowserRouter([
       {
         path: "add",
 
-        element:<ProtectedRoute>
-        <Add />
-      </ProtectedRoute>,
+        element: (
+          <ProtectedRoute>
+            <Add />
+          </ProtectedRoute>
+        ),
       },
 
       {

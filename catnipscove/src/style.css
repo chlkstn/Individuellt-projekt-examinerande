@@ -168,6 +168,18 @@ form {
   }
 }
 
+
+.visitor-details{
+
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+
+
+
+
+}
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -188,6 +200,7 @@ footer {
 #social-media figure img {
   width: 30px;
   height: auto;
+ 
 }
 
 .manage {

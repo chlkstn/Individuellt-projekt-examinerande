@@ -8,14 +8,17 @@ const VisitorDetails: React.FC = () => {
   const { visitors } = useVisitors();
   const { cats } = useCats();
   const { catId } = useParams<{ catId: string }>(); // Get catId from route parameters
-  const [visitorInfo, setVisitorInfo] = useState<
-    { visitor: Visitor; cat: Cat | undefined } | null
-  >(null);
+  const [visitorInfo, setVisitorInfo] = useState<{
+    visitor: Visitor;
+    cat: Cat | undefined;
+  } | null>(null);
 
   useEffect(() => {
     if (catId) {
       // Find the visitor with the corresponding catId
-      const visitor = visitors.find((visitor) => visitor.catId === parseInt(catId));
+      const visitor = visitors.find(
+        (visitor) => visitor.catId === parseInt(catId)
+      );
       const cat = cats.find((cat) => cat.id === parseInt(catId));
       if (visitor) {
         setVisitorInfo({ visitor, cat });
@@ -31,7 +34,7 @@ const VisitorDetails: React.FC = () => {
 
   return (
     <section className="visitor-details">
-      <h2>Visitor Details</h2>
+      <h1>Visitor Details</h1>
       <h2>Cat: {cat.name}</h2>
       <div className="visitor-card">
         <h3>
@@ -40,7 +43,6 @@ const VisitorDetails: React.FC = () => {
         <p>Phone: {visitor.phone}</p>
         <p>Email: {visitor.email}</p>
         <p>Message: {visitor.message}</p>
-        
       </div>
     </section>
   );

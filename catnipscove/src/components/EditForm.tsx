@@ -4,8 +4,7 @@ import { Cat } from "../Interface"; // Import Cat interface
 import { useNavigate, useParams } from "react-router-dom";
 
 const EditForm: React.FC = () => {
-  const { id } = useParams<{ id: string }>(); // Get the cat ID from the URL
-  const { cats, editCat } = useCats();
+  const { id } = useParams<{ id: string }>(); // Get the cat ID
   const navigate = useNavigate();
   const catToEdit = cats.find((cat) => cat.id === Number(id));
 
